@@ -143,7 +143,6 @@ gulp.task('css', function() {
 		sourcemaps.init(),
 		sass(),
 		autoprefixer(),
-		cssnano(),
 		sourcemaps.write(),
 		gulp.dest(myPath.dist.mainCSS))
 	.on('error', notify.onError(function(err) {
@@ -175,7 +174,6 @@ gulp.task('js', function() {
 			presets: [es2015]
 		}),
 		sourcemaps.init(),
-		uglify(),
 		sourcemaps.write(),
 		gulp.dest(myPath.dist.mainJS))
 	.on('error', notify.onError(function(err) {
@@ -192,7 +190,6 @@ gulp.task('otherJS', function() {
 			presets: [es2015]
 		}),
 		sourcemaps.init(),
-		uglify(),
 		sourcemaps.write(),
 		gulp.dest(myPath.dist.indexFolder))
 	.on('error', notify.onError(function(err) {

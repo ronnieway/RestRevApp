@@ -1,3 +1,52 @@
-<section class="content">
-    
+<section class="content" id="content">
+	<div class="row">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="about">
+			<h3>About</h3>
+			<p>All the text about app and how to use it.</p>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="restaurants">
+			<h3>Restaurants</h3>
+			<h4>You can find nearby restaurants by geolocation:</h4>
+			<button type="submit" class="btn btn-primary btn-default" id="getLocationBtn">Find restaurants nearby</button>
+
+			<h4>Or, select the country and the city, and / or the restaurant name:</h4>
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">    
+					<label for="countriesList">Country</label> 
+					<input list="countriesList" class="form-control" id="countriesListInput" placeholder="country name" autocomplete="off" required"> 
+					<datalist id="countriesList">
+						<option value="UA"></option>
+					</datalist>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+					<label for="cityInput">City</label>
+					<input type="text" class="form-control" id="cityInput" placeholder="city name">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+					<label for="restNameInput">Restaurant name</label>
+					<input type="text" class="form-control" id="restNameInput" placeholder="restaurant name">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+					<button type="submit" class="btn btn-primary btn-default" id="findRestaurantBtn">Find chosen restaurants</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			<div id="restResults">
+			</div>
+		</div>
+	</div>
+	
 </section>
