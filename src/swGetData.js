@@ -19,7 +19,6 @@ self.addEventListener('install', function(event) {
 				'/README.md',
 				'/css/main.css',
 				'/js/main.js',
-        '/others/countries.json',
         '/img/512px-Carte_Printemps_Spring_menu_Switzerland_Michelin_starred_restaurant.jpg'
 			]);
 		})

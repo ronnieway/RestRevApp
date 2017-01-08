@@ -1,11 +1,90 @@
 /* MAIN PART STYLES */
 #about {
-	height: 50vh;
+	height: 70vh;
 	padding-top: 10vh;
+	border-bottom: 1px solid white;
 }
 
 #restaurants {
 	padding-top: 10vh;
+	padding-top: 8vh;
 }
 
+
+.forming {
+	margin-top: 5vh;
+}
+
+.venue {
+	border: 1px solid white;
+	padding: 2vh;
+	margin-top: 1vh;
+}
+
+.venue h4 {
+	background-color: white;
+	font-size: 3vh;
+	padding-left: 1vw;
+}
+
+.venue div {
+	padding: 1vh;
+}
+
+.venue button {
+	color: #5C3802;
+	border: 1px solid #5C3802;
+	background-color: white;
+	padding: 1vh;
+	margin: 1vh;
+	border-radius: 5px;
+}
+
+.venue button:hover, .venue button:focus {
+	background-color: #5C3802;
+	color: white;
+}
+
+.venue img {
+	border: 2px solid white;
+	border-radius: 50%;
+}
+
+
+.tipsDiv {
+	border: 1px solid #F5ECCE;
+	padding: 2vh;
+	margin-top: 1vh;
+}
+
+.tipsDiv div {
+	padding: 1vh 2vw 1vh 2vw;
+}
+
+.tipText {
+	font-weight: bolder;
+	font-size: 125%;
+}
+
+.tipLink {
+	color: $color-dark-main;
+	text-decoration: underline;
+	padding: 1vh;
+	margin: 1vh;
+}
+
+.tipLink:hover, .tipLink:focus {
+	background-color: #5C3802;
+	color: white;
+}
+
+.addtipsbottom {
+	width: 25vw;
+	margin: 1vh auto;
+}
+
+.btnToAddTip {
+	padding: 1vh !important;
+	margin-top: 3.5vh !important;
+}
 /* end MAIN PART STYLES */

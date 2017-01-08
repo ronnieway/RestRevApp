@@ -1,52 +1,70 @@
-<section class="content" id="content">
+<main class="content" id="content">
 	<div class="row">
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="about">
-			<h3>About</h3>
-			<p>All the text about app and how to use it.</p>
+			<h2>About app</h2>
+			<p>Welcome to RestRevApp.</p>
+			<p>With this app you can find restaurants nearby, or in specified city. You can choose the restaurant category, or find any. Moreover, you can specify the name of the restaurant.</p>
+			<p>App will show you top 10 restaurants that meet your search data criteria.</p>
+			<p>Then you will be able to see 10 top most reviews (tips) from the users that have been at the chosen restaurant, and add your own tip, that will be visible for another users.</p>
+			<p></p>
+			<p><b>Note:</b> since the app uses Foursquare API you will need to login to foursquare.com web site for using the app. Also, since Foursquare provides top most tips from the users, your recently added tip may not be included into the list of the tip immediately, nevertheless it will be available at foursquare.com.</p>
+			<p>Have a nice time using RestRevApp!</p>
 		</div>
 	</div>
 
 	<div class="row">
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="restaurants">
-			<h3>Restaurants</h3>
-			<h4>You can find nearby restaurants by geolocation:</h4>
-			<button type="submit" class="btn btn-primary btn-default" id="getLocationBtn">Find restaurants nearby</button>
-
-			<h4>Or, select the country and the city, and / or the restaurant name:</h4>
-			<div class="row">
-				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">    
-					<label for="countriesList">Country</label> 
-					<input list="countriesList" class="form-control" id="countriesListInput" placeholder="country name" autocomplete="off" required"> 
-					<datalist id="countriesList">
-						<option value="UA"></option>
-					</datalist>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-					<label for="cityInput">City</label>
-					<input type="text" class="form-control" id="cityInput" placeholder="city name">
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-					<label for="restNameInput">Restaurant name</label>
-					<input type="text" class="form-control" id="restNameInput" placeholder="restaurant name">
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-					<button type="submit" class="btn btn-primary btn-default" id="findRestaurantBtn">Find chosen restaurants</button>
-				</div>
-			</div>
+			<h2>Restaurants</h2>
+			<b class ="describingText">Choose the restaurant category, if you have any preferences:</b>
 		</div>
 	</div>
-
+	<div class="row forming">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			<label for="catInput">Restaurant category</label>
+			<input list="catList" class="form-control" id="catInput" placeholder="Choose restaurant category" autocomplete="off"> 
+				<datalist id="catList">
+				</datalist>
+		</div>
+	</div>
+	<div class="row forming">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			<p><b class ="describingText">You can find nearby restaurants by geolocation, or provide the preferred city</b></p>
+			<p><b class ="describingText">Optionally, you can provide the restaurant name as well</b></p>
+		</div>
+	</div>	
+	<div class="row forming">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			<label for="cityInput">City</label>
+			<input type="text" class="form-control" id="cityInput" placeholder="city name">
+		</div>
+	</div>
+	<div class="row forming">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			<label for="restNameInput">Restaurant name</label>
+			<input type="text" class="form-control" id="restNameInput" placeholder="restaurant name">
+		</div>
+	</div>
+	<div class="row forming">
+		<div class="col-md-1 col-lg-1">
+		</div>
+		<div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
+			<button type="submit" class="btn btn-primary btn-default btn-block btn-lg" id="getLocationBtn">Find restaurants nearby</button>
+		</div>
+		<div class="row hidden-md hidden-lg">
+			<div class="col-xs-12 col-sm-12 hidden-md hidden-lg">
+			<p class="text-center hidden-md hidden-lg">or</p>
+			</div>
+		</div>
+		<div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
+			<button type="submit" class="btn btn-primary btn-default btn-block btn-lg" id="findRestaurantBtn">Find restaurants in chosen city</button>
+		</div>
+		<div class="col-md-1 col-lg-1">
+		</div>
+	</div>
 	<div class="row">
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 			<div id="restResults">
 			</div>
 		</div>
-	</div>
-	
-</section>
+	</div>	
+</main>

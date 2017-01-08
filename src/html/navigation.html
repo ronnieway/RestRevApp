@@ -1,25 +1,30 @@
-<section class="navigation">
-	<div class="row nav">
+<nav class="navigation">
+	<div class="row mynav">
 		<div class="col-xs-10 col-sm-10 col-md-3 col-lg-3 appTitle">
 			<h1>RestRevApp</h1>
-		</div>
-		<a href="#about">
-			<div class="col-md-3 col-lg-3 menubar">
-				<h2>About</h2>
+		</div>		
+		<div class="col-md-8 col-lg-8 menubar">
+			<a href="#about" class="topMenu">
+				About app
+			</a>
+			<a href="#restaurants" class="topMenu">
+				Restaurants
+			</a>
+			<a href="#footer" class="topMenu">
+			Contacts
+			</a>
+		</div>		
+		<div class="col-xs-2 col-sm-2 hidden-md hidden-lg mobMenu">
+			<div class="btn-group">
+				<button type="button" class="btn btn-default dropdown-toggle" id="mobMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Mobile Menu">
+					<span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+				</button>
+				<ul class="dropdown-menu">
+					<li><a class="mobMenuLink" href="#about" onblur="hideMobMenu();">About app</a></li>
+					<li><a class="mobMenuLink" href="#restaurants" onblur="hideMobMenu();">Restaurants</a></li>
+					<li><a class="mobMenuLink" href="#footer" onblur="hideMobMenu();">Contacts</a></li>
+				</ul>
 			</div>
-		</a>
-		<a href="#restaurants">
-			<div class="col-md-3 col-lg-3 menubar">
-				<h2>Restaurants</h2>
-			</div>
-		</a>
-		<a href="#footer">
-			<div class="col-md-3 col-lg-3 menubar">
-				<h2>Contacts</h2>
-			</div>
-		</a>
-		<div class="col-xs-2 col-sm-2 mobMenu">
-			MobMenu
 		</div>
 	</div>
-</section>
+</nav>

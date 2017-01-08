@@ -1,29 +1,9 @@
 /* HEADER STYLES */
-.appTitle {
-	text-align: center;
-	background-color: white;
-	padding: 0;
-}
-
-.menubar {
-	text-align: center;
-	margin-top: 1vh;
-	background-color: lightgray;
-	border: 2px solid white;
-	padding: 0;
-}
-
-.menubar a{
-	text-decoration: none;
-	color:black;
-}
 
 #restPicture {
-	width: 100%;
+	max-width: 120%;
 	padding-bottom: 1vh;
-}
-
-.mobMenu {
-	display: none;
+	margin: 1vh auto;
+	overflow: hidden;
 }
 /* end HEADER STYLES */

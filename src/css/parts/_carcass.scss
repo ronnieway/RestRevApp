@@ -1,34 +1,40 @@
 .container {
   width: 1024px;
   margin: auto;
+  background-color: #F5ECCE;
+  border-left: 2px solid #332002;
+  border-right: 2px solid #332002;
 }
 
 .header {
-	height: 90vh;
+	height: 80vh;
 	position: relative;
-	top: 5vw;
+	top: 9vh;
 }
 
 .content {
-	margin-top: 2vh;
+	margin-top: 5vh;
 	padding: 1vw;
-	background-color: lightgray;
+	background-color: #A9926F;
+	border: 1px solid white;
 	position: relative;
 }
 
 .footer {
-	padding: 1vw;
-	height: 50vh;
-	background-color: gray;
+	padding: 2vh;
+	height: 30vh;
+	background-color: #5C3802;
+	border: 1px solid white;
 	position: relative;
 }
 
-.nav {
-	margin: 0;
+.mynav {
+	margin: 0 auto;
 	padding: 0;
 	height: 10vh;
 	position: fixed;
 	z-index: 5;
-	background-color: white;
-	width: 995px;
+	background-color: #F5ECCE;
+	width: 80vw;
+	max-width: 1000px;
 }

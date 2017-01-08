@@ -5,119 +5,148 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- inject:_head:html -->
-	                    <title>RestRevApp</title>
+	                                                                                                                                                                                                                                                                                                                            <title>RestRevApp the best application for searching restaurants nearby and sharing reviews about them using Foursquare API</title>
     <link rel="stylesheet" href="../bower_components/normalize-css/normalize.css">
     <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
-	                <!-- endinject -->
+	                                                                                                                                                                                                                                                                                                                        <!-- endinject -->
   </head>
-  <body onload="loadCountries();">
+  <body id="body">
     <div class="container">
 <!-- inject:navigation:html -->
-		<section class="navigation">
-	<div class="row nav">
+		<nav class="navigation">
+	<div class="row mynav">
 		<div class="col-xs-10 col-sm-10 col-md-3 col-lg-3 appTitle">
 			<h1>RestRevApp</h1>
-		</div>
-		<a href="#about">
-			<div class="col-md-3 col-lg-3 menubar">
-				<h2>About</h2>
+		</div>		
+		<div class="col-md-8 col-lg-8 menubar">
+			<a href="#about" class="topMenu">
+				About app
+			</a>
+			<a href="#restaurants" class="topMenu">
+				Restaurants
+			</a>
+			<a href="#footer" class="topMenu">
+			Contacts
+			</a>
+		</div>		
+		<div class="col-xs-2 col-sm-2 hidden-md hidden-lg mobMenu">
+			<div class="btn-group">
+				<button type="button" class="btn btn-default dropdown-toggle" id="mobMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Mobile Menu">
+					<span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+				</button>
+				<ul class="dropdown-menu">
+					<li><a class="mobMenuLink" href="#about" onblur="hideMobMenu();">About app</a></li>
+					<li><a class="mobMenuLink" href="#restaurants" onblur="hideMobMenu();">Restaurants</a></li>
+					<li><a class="mobMenuLink" href="#footer" onblur="hideMobMenu();">Contacts</a></li>
+				</ul>
 			</div>
-		</a>
-		<a href="#restaurants">
-			<div class="col-md-3 col-lg-3 menubar">
-				<h2>Restaurants</h2>
-			</div>
-		</a>
-		<a href="#footer">
-			<div class="col-md-3 col-lg-3 menubar">
-				<h2>Contacts</h2>
-			</div>
-		</a>
-		<div class="col-xs-2 col-sm-2 mobMenu">
-			MobMenu
 		</div>
 	</div>
-</section>
+</nav>
 		<!-- endinject -->
 <!-- inject:header:html -->
-		<section class="header" id="header">
+		<header class="header" id="header">
 	<div class="row">
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-			<img id="restPicture" src ="img/1024px-Carte_Printemps_Spring_menu_Switzerland_Michelin_starred_restaurant.jpg">
+			<picture id="restPicture" class="center-block">
+				<source media="(min-width: 900px)" srcset="img/1024px-Carte_Printemps_Spring_menu_Switzerland_Michelin_starred_restaurant.jpg" alt="Chocolate cake with milk shaker dessert">
+				<source media="(min-width: 400px)" srcset="img/512px-Carte_Printemps_Spring_menu_Switzerland_Michelin_starred_restaurant.jpg" alt="Chocolate cake with milk shaker dessert">
+				<img id="restPicture" class="center-block" src="img/256px-Carte_Printemps_Spring_menu_Switzerland_Michelin_starred_restaurant.jpg" alt="Chocolate cake with milk shaker dessert">
+			</picture>
 		</div>
 	</div>
-</section>
+</header>
 		<!-- endinject -->
 <!-- inject:content:html -->
-		<section class="content" id="content">
+		<main class="content" id="content">
 	<div class="row">
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="about">
-			<h3>About</h3>
-			<p>All the text about app and how to use it.</p>
+			<h2>About app</h2>
+			<p>Welcome to RestRevApp.</p>
+			<p>With this app you can find restaurants nearby, or in specified city. You can choose the restaurant category, or find any. Moreover, you can specify the name of the restaurant.</p>
+			<p>App will show you top 10 restaurants that meet your search data criteria.</p>
+			<p>Then you will be able to see 10 top most reviews (tips) from the users that have been at the chosen restaurant, and add your own tip, that will be visible for another users.</p>
+			<p></p>
+			<p><b>Note:</b> since the app uses Foursquare API you will need to login to foursquare.com web site for using the app. Also, since Foursquare provides top most tips from the users, your recently added tip may not be included into the list of the tip immediately, nevertheless it will be available at foursquare.com.</p>
+			<p>Have a nice time using RestRevApp!</p>
 		</div>
 	</div>
 
 	<div class="row">
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="restaurants">
-			<h3>Restaurants</h3>
-			<h4>You can find nearby restaurants by geolocation:</h4>
-			<button type="submit" class="btn btn-primary btn-default" id="getLocationBtn">Find restaurants nearby</button>
-
-			<h4>Or, select the country and the city, and / or the restaurant name:</h4>
-			<div class="row">
-				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">    
-					<label for="countriesList">Country</label> 
-					<input list="countriesList" class="form-control" id="countriesListInput" placeholder="country name" autocomplete="off" required"> 
-					<datalist id="countriesList">
-						<option value="UA"></option>
-					</datalist>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-					<label for="cityInput">City</label>
-					<input type="text" class="form-control" id="cityInput" placeholder="city name">
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-					<label for="restNameInput">Restaurant name</label>
-					<input type="text" class="form-control" id="restNameInput" placeholder="restaurant name">
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-					<button type="submit" class="btn btn-primary btn-default" id="findRestaurantBtn">Find chosen restaurants</button>
-				</div>
-			</div>
+			<h2>Restaurants</h2>
+			<b class ="describingText">Choose the restaurant category, if you have any preferences:</b>
 		</div>
 	</div>
-
+	<div class="row forming">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			<label for="catInput">Restaurant category</label>
+			<input list="catList" class="form-control" id="catInput" placeholder="Choose restaurant category" autocomplete="off"> 
+				<datalist id="catList">
+				</datalist>
+		</div>
+	</div>
+	<div class="row forming">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			<p><b class ="describingText">You can find nearby restaurants by geolocation, or provide the preferred city</b></p>
+			<p><b class ="describingText">Optionally, you can provide the restaurant name as well</b></p>
+		</div>
+	</div>	
+	<div class="row forming">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			<label for="cityInput">City</label>
+			<input type="text" class="form-control" id="cityInput" placeholder="city name">
+		</div>
+	</div>
+	<div class="row forming">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			<label for="restNameInput">Restaurant name</label>
+			<input type="text" class="form-control" id="restNameInput" placeholder="restaurant name">
+		</div>
+	</div>
+	<div class="row forming">
+		<div class="col-md-1 col-lg-1">
+		</div>
+		<div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
+			<button type="submit" class="btn btn-primary btn-default btn-block btn-lg" id="getLocationBtn">Find restaurants nearby</button>
+		</div>
+		<div class="row hidden-md hidden-lg">
+			<div class="col-xs-12 col-sm-12 hidden-md hidden-lg">
+			<p class="text-center hidden-md hidden-lg">or</p>
+			</div>
+		</div>
+		<div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
+			<button type="submit" class="btn btn-primary btn-default btn-block btn-lg" id="findRestaurantBtn">Find restaurants in chosen city</button>
+		</div>
+		<div class="col-md-1 col-lg-1">
+		</div>
+	</div>
 	<div class="row">
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 			<div id="restResults">
 			</div>
 		</div>
-	</div>
-	
-</section>
+	</div>	
+</main>
 		<!-- endinject -->
 <!-- inject:footer:html -->
-		<section class="footer" id="footer">
+		<footer class="footer" id="footer">
 	<div class="row">
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="contacts">
-			<h3>Contacts</h3>
-			<p>Some text about contacting us.</p>
+			<h2>Contacts</h2>
+			<p>This app was created as one of the projects within Senior Web Developer Nanodegree from Udacity.com by Ruslan Dorozhovets.</p>
+			<p>If you have any question and / or suggestions - just <a href="mailto:rrruslan@yahoo.com">email me!</a></p>
 		</div>
 	</div>
-</section>
+</footer>
 		<!-- endinject -->
 <!-- inject:_scripts:html -->
-		                    <script src="bower_components/jquery/dist/jquery.js"></script>
+		                                                                                                                                                                                                                                                                                                                            <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script> 
     <script src="js/main.js"></script>
-		                <!-- endinject -->
+		                                                                                                                                                                                                                                                                                                                        <!-- endinject -->
     </div>
   </body>
 </html>

@@ -1,3 +1,71 @@
 /* NAVIGATION STYLES */
+.appTitle {
+	text-align: center;
+	padding: 0;
+}
+
+.menubar {
+	margin-top: 2vh;	
+	padding: 0;
+}
+
+.menubar a{
+	text-decoration: none;
+	color: $color-dark-main;
+}
+
+.topMenu:hover, .topMenu:focus {
+	color: #5C3802 !important;
+	background-color: white;
+	border: 3px solid #5C3802;
+}
+
+.topMenu {
+	font-size: 1.8vw;
+	text-align: center;
+	margin-top: 3vh;
+	margin-left: 2vw;
+	padding: 1vh 2vw 1vh 2vw;
+	background-color: #5C3802;
+	color: white !important;
+	border: 3px solid #5C3802;
+	border-radius: 5px;
+}
+
+#mobileMenuDiv {
+	display: none;
+	width: 25vw;
+	position: fixed;
+	top: 6vh;
+	right: 0;
+	overflow: hidden;
+	z-index: 10;
+	border: 1px solid #5C3802;
+}
+
+.mobMenuItem {
+	height: 8vh;
+	padding: 1vh;
+	background-color: white;
+	
+}
+
+.mobMenuItem:focus, .mobMenuItem:hover, .mobMenuLink:focus, .mobMenuLink:hover {
+	background-color: #5C3802;
+	color: white;
+	border: 1px solid #5C3802;
+}
+
+.mobMenuLink {
+	color: $color-dark-main;
+	font-size: 3vw;	
+}
+
+.mobMenu {
+	padding: 0;
+	margin: 0;
+	background-color: #F5ECCE;
+	border: 0;
+}
 
 /* end NAVIGATION STYLES */

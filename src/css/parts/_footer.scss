@@ -1,3 +1,16 @@
 /* FOOTER STYLES */
+#contacts h2, #contacts p {
+	color: white;
+}
+
+#contacts a {
+	color: white;
+	text-decoration: underline;
+	padding: 1vh;
+}
+
+#contacts a:hover, #contacts a:focus {
+	border: 1px solid white
+}
 
 /* end FOOTER STYLES */
