@@ -40,6 +40,7 @@ var myPath = {
 		pluginsSCSS: 'src/css/plugins/*.scss',
 		settingsSCSS: 'src/css/settings/*.scss',
 		partsJS: 'src/js/parts/*.js',
+		jsons: 'src/js/*.json',
 		pluginsJS: 'src/js/plugins/*.js',
 		swJS: 'src/*.js',
 		allImg: 'src/img/**/*.*',
@@ -199,6 +200,17 @@ gulp.task('otherJS', function() {
 	}));
 });
 
+gulp.task('jsons', function() {
+	return multipipe(
+		gulp.src(myPath.src.jsons),
+		gulp.dest(myPath.dist.mainJS))
+	.on('error', notify.onError(function(err) {
+		return {
+			message: err.message
+		};
+	}));
+});
+
 gulp.task('jsRelease', function() {
 	return multipipe(
 		gulp.src(myPath.src.mainJS),
@@ -322,6 +334,8 @@ gulp.task('watch', function() {
 
 	gulp.watch(myPath.src.swJS, gulp.series('otherJS'));
 
+	gulp.watch(myPath.src.jsons, gulp.series('jsons'));
+
 	gulp.watch(myPath.src.partsSCSS, gulp.series('cleanMainSCSS', 'css'));
 
 	gulp.watch(myPath.src.pluginsSCSS, gulp.series('cleanMainSCSS', 'css'));
@@ -339,10 +353,10 @@ gulp.task('watch', function() {
 	gulp.watch(myPath.src.readme, gulp.series('readme'));
 });
 
-gulp.task('build', gulp.series('clean', 'bower', 'cleanMainJS', 'cleanMainSCSS', 'injectJS', 'injectHTML', 'css', 'js', 'otherJS', 'index', 'img', 'others', 'fonts', 'readme'));
+gulp.task('build', gulp.series('clean', 'bower', 'cleanMainJS', 'cleanMainSCSS', 'injectJS', 'injectHTML', 'css', 'js', 'otherJS', 'jsons', 'index', 'img', 'others', 'fonts', 'readme'));
 
 gulp.task('dev', gulp.series('build', gulp.parallel('watch', 'server')));
 
-gulp.task('buildRelease', gulp.series('clean', 'bower', 'cssRelease', 'jsRelease', 'otherJSRelease', 'index', 'img', 'others', 'fonts', 'readme'));
+gulp.task('buildRelease', gulp.series('clean', 'bower', 'cssRelease', 'jsRelease', 'otherJSRelease', 'jsons', 'index', 'img', 'others', 'fonts', 'readme'));
 
 gulp.task('release', gulp.series('buildRelease', gulp.parallel('watch','server')));

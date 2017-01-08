@@ -14,12 +14,14 @@ self.addEventListener('install', function(event) {
 	event.waitUntil(
 		caches.open('RestRevApp').then(function(cache) {
 			return cache.addAll([
-				'/',
 				'/index.html',
 				'/README.md',
 				'/css/main.css',
 				'/js/main.js',
-        '/img/512px-Carte_Printemps_Spring_menu_Switzerland_Michelin_starred_restaurant.jpg'
+        '/js/categories.json',
+        '/img/256px-Carte_Printemps_Spring_menu_Switzerland_Michelin_starred_restaurant.jpg',
+        '/img/512px-Carte_Printemps_Spring_menu_Switzerland_Michelin_starred_restaurant.jpg',
+        '/img/1024px-Carte_Printemps_Spring_menu_Switzerland_Michelin_starred_restaurant.jpg'
 			]);
 		})
     );
